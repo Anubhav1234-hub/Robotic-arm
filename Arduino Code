@@ -1,0 +1,32 @@
+
+void setup() {
+  Serial.begin(9600);
+  shoulder.attach(3); 
+  elbow.attach(5);
+  wristP.attach(6);
+  wristR.attach(9);
+  gripper.attach(10);
+  shoulder.write(90);
+  elbow.write(90);
+  wristP.write(90);
+  wristR.write(90);
+  gripper.write(90);
+
+  Serial.println("System Online. Awaiting Commands (S, E, P, R, G)...");
+}
+
+void loop() {
+  if (Serial.available() > 0) {
+    char joint = Serial.read();    
+    int pos = Serial.parseInt();  
+    if (pos >= 0 && pos <= 180) {
+      switch (toupper(joint)) {
+        case 'S': shoulder.write(pos); break;
+        case 'E': elbow.write(pos);    break;
+        case 'P': wristP.write(pos);   break;
+        case 'R': wristR.write(pos);   break;
+        case 'G': gripper.write(pos);   break;
+      }
+    }
+  }
+}
