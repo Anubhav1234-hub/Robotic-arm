@@ -1,0 +1,10 @@
+PIN Diagram:
+
+HC-05 Bluetooth:- Vcc:5v , TX:-1(Default) ,RX:0(Default)
+Shoulder Servo,Signal (Yellow/White),Pin 3,-
+Elbow Servo,Signal (Yellow/White),Pin 5,-
+Wrist Pitch Servo,Signal (Yellow/White),Pin 6,-
+Wrist Roll Servo,Signal (Yellow/White),Pin 9,-
+Gripper Servo,Signal (Yellow/White),Pin 10,-
+ALL SERVOS,VCC (Red),-,5V - 6V (Positive)
+ALL SERVOS,GND (Black/Brown),GND,GND (Negative)
